@@ -30,7 +30,7 @@ env:
 
 jobs:
   build:
-    name: Build ${{ env.PRG_NAME }} application
+    name: Build application
     runs-on: ubuntu-latest
     steps:
       - name: Checkout source code
@@ -102,11 +102,6 @@ jobs:
             ./${{ env.PRG_NAME }}/build/outputs/apk/
 
 # full begin
-      - name: set env.PRG_TYPE full
-        shell: bash
-        run: |
-          echo "PRG_TYPE=$PRG_TYPE_FULL" >> $GITHUB_ENV
-
       - name: Copy apk from outputs/
         shell: bash
         run: |
@@ -121,8 +116,8 @@ jobs:
           echo "LIST: " ${{ env.PRG_NAME }}-${{ env.PRG_VERSION }}-release.apk
           ls -l ./signed-apk/
 
-      - uses: deep-soft/sign-android-release@v1
-        name: Sign app APK
+      - name: Sign app APK
+        uses: deep-soft/sign-android-release@v1
         if: env.ANDROID_SIGNING_KEY != null
         id: sign-app
         with:
