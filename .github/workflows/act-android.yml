@@ -74,7 +74,7 @@ jobs:
           directory: '.'
           exclusions: ''
           recursive_exclusions: ''
-          ignore_git: 'no'
+          ignore_git: 'yes'
           path: '.'
           env_variable: ASSET_SRC
         # archive name is ${{ env.ZIP_RELEASE_ARCHIVE }}
