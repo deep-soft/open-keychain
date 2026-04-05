@@ -62,8 +62,7 @@ jobs:
           echo "REF: ${{ env.TAG_REF }}";
           echo "BLD: ${{ env.TAG_BUILD }}";
           echo "${{ env.TAG_NAME }}-${{ env.TAG_VERSION }}-${{ env.TAG_BUILD }}" > _tag_name_.txt
-          echo "${{ env.TAG_NAME }}-${{ env.TAG_VERSION }}-${{ env.TAG_BUILD }}" > ${{ env.PRG_NAME }}-${{ env.PRG_VERSION }}-${{ env.PRG_TYPE_FULL }}-release-signed.txt
-          echo "${{ env.TAG_NAME }}-${{ env.TAG_VERSION }}-${{ env.TAG_BUILD }}" > ${{ env.PRG_NAME }}-${{ env.PRG_VERSION }}-${{ env.PRG_TYPE_FOSS }}-release-signed.txt
+          echo "${{ env.TAG_NAME }}-${{ env.TAG_VERSION }}-${{ env.TAG_BUILD }}" > ${{ env.PRG_NAME }}-${{ env.PRG_VERSION }}-release-signed.txt
 
       - name: Create source archive
         continue-on-error: true
