@@ -35,9 +35,10 @@ jobs:
     steps:
       - name: Checkout source code
         # uses: deep-soft/checkout@v4
+        # was: fetch-depth: 1
         uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
         with:
-          fetch-depth: 1
+          submodules: recursive
 
       - name: Get ref, set build version
         shell: bash
